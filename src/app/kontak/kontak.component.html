@@ -1,1 +1,37 @@
-<h3>kontak</h3>
+<form class="x-form" name="formulir-kontak" action="thank-you" netlify>
+
+
+  <table class="x-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <md-input-container class="x-full-width">
+          <input mdInput placeholder="Nama Depan">
+        </md-input-container>
+      </td>
+      <td>
+        <md-input-container class="x-full-width">
+          <input mdInput placeholder="Nama Belakang">
+        </md-input-container>
+      </td>
+    </tr>
+  </table>
+  <md-input-container class="x-full-width">
+    <input mdInput placeholder="Email">
+  </md-input-container>
+<md-input-container class="x-full-width" floatPlaceholder="auto">
+    <textarea mdInput mdTextareaAutosize name="Message" [(ngModel)]="Message" required
+              placeholder="Message"></textarea>
+</md-input-container>
+<button  md-button (click)="submit"><md-icon>send</md-icon> <span>Kirim</span> </button>
+</form>
+
+<script>
+  $("#formulir-kontak").submit(function(e) {
+  e.preventDefault();
+
+  var $form = $(this);
+  $.post($form.attr("action"), $form.serialize()).then(function() {
+    alert("Thank you!");
+  });
+});
+</script>

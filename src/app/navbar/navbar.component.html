@@ -1,0 +1,21 @@
+<md-toolbar class="ibiza">
+    <button md-button routerLink="/"><h3>{{title}}</h3></button>
+    <span class="x-spacer"></span>
+    <button md-icon-button [mdMenuTriggerFor]="menu">
+  <md-icon>more_vert</md-icon>
+</button>
+<md-menu #menu="mdMenu">
+  <button href="https://hub.publisher.co.id/register" md-menu-item>
+    <md-icon>people</md-icon>
+    <span>Komunitas</span>
+  </button>
+  <button routerLink="/kontak" md-menu-item>
+    <md-icon>message</md-icon>
+    <span>Kontak</span>
+  </button>
+  <button routerLink="/about" md-menu-item>
+    <md-icon>fingerprint</md-icon>
+    <span>Tentang</span>
+  </button>
+</md-menu>
+</md-toolbar>

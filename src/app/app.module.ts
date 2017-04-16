@@ -12,12 +12,15 @@ import { AboutComponent } from './about/about.component';
 import { KontakComponent } from './kontak/kontak.component';
 import { IntroComponent } from './intro/intro.component';
 import { ServiceComponent } from './service/service.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { NothingComponent } from './nothing/nothing.component';
 
 const routingApp: Route[] = [
+  {path: '', component: IntroComponent},
   {path: 'about', component: AboutComponent},
   {path: 'kontak', component: KontakComponent},
   {path: 'service', component: ServiceComponent},
-  {path: '**', component: IntroComponent}
+  {path: '**', component: NothingComponent}
 ];
 
 @NgModule({
@@ -27,6 +30,8 @@ const routingApp: Route[] = [
     KontakComponent,
     IntroComponent,
     ServiceComponent,
+    NavbarComponent,
+    NothingComponent,
   ],
   imports: [
     BrowserModule,
